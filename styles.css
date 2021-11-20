@@ -51,3 +51,19 @@ body {
 .about img {
     border-radius: 8vw;
 }
+
+.arrow {
+    display: inline-block;
+    max-width: 5vw;
+}
+
+.deck {
+    justify-content: center;    
+    display: flex;
+    align-items: center;
+}
+
+.resume {
+    width: 40%;
+    border-style: solid;
+}
