@@ -10,22 +10,22 @@
     </head>
     <body>
         <div class="navbar"> 
-            <a class="navlink" href=''>About</a>
-            <a class="navlink" href=''>Previous Work</a>
-            <a class="navlink" href=''>Projects</a>
+            <a class="navlink" href='#1'>About</a>
+            <a class="navlink" href='#2'>Previous Work</a>
+            <a class="navlink" href='#3'>Projects</a>
             <a class="navlink" href=''>Contact</a>
         </div>
         
         <span class="burn"></span>
         <div class="about block">
-            <h1>About</h1>
+            <h1 id="1">About</h1>
             <img src="img/monkey.jpg" alt="picture of austen" height="300px">
             <p>
                 My name is Austen Hsiao and I am a graduate student at Portland State University (PSU). 
                 <br><br>
                 I am a big fan of basketball and I love to cook. 
                 <br><br>
-                This webpage was created as part of a course at PSU, to learn about HTML, CSS, and JavaScript.
+                This webpage was created as part of a course at PSU to learn about HTML, CSS, and JavaScript.
                 <br><br>
                 I really enjoy the creative and colorful aspect of developing a website.
                 <br><br>
@@ -36,18 +36,79 @@
         </div>
 
         <div class="previous_work block">
-            <h1>Previous Work</h1>
+            <h1 id="2">Previous Work</h1>
             <img class="resume" src="img/resume.png">
         </div>
         
         <div class="Projects block">
-            <h1>Projects</h1>
+            <h1 id="3">Projects</h1>
             
             <div class="deck">
                 <img class="arrow left" src="img/left-arrow.png" onclick=cycle_left()>
+                <!-- Each card below this line corresponds to a page in the carousel -->
+                <div class="card">
+                    <h3>Robby the Robot (1/2)</h3>
+                    <p>
+                    Robby lives in a 10x10 board that is riddled with cans. Robby can either move in any of the cardinal directions, stay put, pick up a can, or move randomly. If Robby 
+                    picks up a can, he gets 10 points. If he crashes into a wall, he loses 5 points and if he tries to mistakenly pick up a can, he loses 1 point.
+                    In class, we talked about genetic algorithms, these are algorithms derived from organic sources. 
+                    </p>
+                    <p>
+                    In the case of Robby, I programmed a method that mimics DNA replication-- this is a widely known algorithm. 
+                    Each individual path Robby takes can be considered as a chromosome. If we initially start with random paths, Robby will obviously perform
+                    poorly. However, if we take his two best trials and splice them together (randomly), we can improve his score over the course of many iterations.
+                    The straight-forward way to implement a robot on a board is with recursion. 
+                    </p>
+                    <p>
+                    Using recursion, the naive method looks at the current square. If there is a can, Robby picks it up and he gets 10 points. Then Robby looks 
+                    around him, moving to the first square Robby sees a can (in the order: left, right, up, down). If Robby does not see any cans, he moves 
+                    randomly. I tested this method by running Robby on 1000 randomly generated 10-by-10 boards.
+                    </p>
+                    <p>
+                    Using a genetic approach, Robby's path is first randomly generated as a string of 243 characters (if Robby can see 5 places-- N, W, S, E, and the current square, and there
+                    are three possible configurations in each square-- wall, can, no can, then the total combination is 3^5 or 243). Each set of strings comprises a single generation. Each generation was defined in my code as having 200 members.
+                    Each string (which can be thought of as chromosomes) is then run with a 'fitness' algorithm to determine how well it performs; the higher the better. The top 2 performing chromosomes 
+                    are used to 'breed' the next generation. To create the children, a random number between 0 and 243 is chosen which represents the character at which we splice 
+                    the two parents together. Much like in organic DNA replication, a small chance of mutation occurs. At each character, I specified a 1-in-200 chance of random mutation. Each child is then run for fitness
+                    and the pattern repeats itself until we hit the specified number of generations, arbitrarily specified as 1000. In order to minimize the chance that Robby is learning a single board, the fitness for each
+                    chromosome is calculated as the average score over 50 randomly generated boards, all starting at (5,5).
+                    </p>
+                    <figure class="line">
+                        <img class="cardpic-half" src="img/RobbySampleBoard.PNG" alt="A sample board"/>
+                        <img class="cardpic-half" src="img/RobbyGAResult.png" alt="Graph of fitness versus generation"/>
+                    </figure>
+                    <p>
+                    (Left) Shows a sample board in which the star is Robby. Roughly half of the positions on the board are occupied by cans in my code. (Right) Shows the results for the genetic algorithm. The maximum 
+                    fitness score was plotted for each generation. Early generations yield poor results, suggesting poor optimization on any given board-- this is expected however, due to randomly initialized paths. As
+                    each generation passes, subsequent optimization improves to a maximum ~260 points. This data was collected using 1000 generations of 200 members. In contrast, the naive (recursive) method reports an average score
+                    of ~14 over the course of 1000 boards.
+                    </p>
+                    <a class="logo_container" href="https://github.com/AustenHsiao/AIFiles/blob/master/Robby.py">
+                        <img class="logo" src="img/githublogo.png">
+                        <span class="repoLink">Click here to view on GitHub</span>
+                    </a>
+                </div>
 
+                <div class="card">
+                    <h3>Secret Spot App (2/2)</h3>
+                    <p>
+                        Secret Spot (Formerly named Forage App) is an application developed by me and two other students at Portland State University. 
+                        The application was developed as a method for people to organize their foraging locations -- think mushrooms, berries, etc. 
+                        Users can create new location markers specified by a name, species found, additional comments, and a latitude/longitude. 
+                        Centering on a stored location also displays the local weather forecast to allow planning for foraging trips. 
+                        APIs used include Google Map API and OpenWeather. We deployed <a href="https://forage-app-pdx.herokuapp.com/">our app on Heroku</a>.
+                    </p>
+                    <figure class="line">
+                        <img class="cardpic" src="img/secretspot.PNG" alt="A sample image from the Secret Spot app"/>
+                    </figure>
+                    <a class="logo_container" href="https://github.com/AustenHsiao/FS_Forage">
+                        <img class="logo" src="img/githublogo.png">
+                        <span class="repoLink">Click here to view on GitHub</span>
+                    </a>
+                </div>
+                <!-- End of cards -->
                 <img class="arrow right" src="img/right-arrow.png" onclick=cycle_right()>
-            </div>
+                </div>
         </div>
         
         <script src="main.js" async defer></script>
