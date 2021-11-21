@@ -20,6 +20,7 @@
     text-decoration: none;
     background-color: black;
     font-weight: bold;
+    overflow-wrap: break-word;
 }
 
 .navlink:hover {
@@ -36,7 +37,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif; 
-    font-size: 2vh;
+    font-size: 80%;
     background-color: darkgrey;
 }
 
@@ -53,8 +54,16 @@ body {
 }
 
 .arrow {
+    padding-top: 39vh;
     display: inline-block;
     max-width: 5vw;
+    padding-bottom: 39vh;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 1vh;
+}
+
+.arrow:hover{
+    background-color: rgba(0,0,0,0.7);
 }
 
 .deck {
@@ -66,4 +75,48 @@ body {
 .resume {
     width: 40%;
     border-style: solid;
+}
+
+.card {
+    border-style: solid;
+    max-height: 76vh;
+    min-height: 76vh;
+    max-width: 50vw;
+    min-width: 50vw;
+    overflow-y: scroll;
+    border-radius: 1vh;
+    padding: 2vw;
+}
+
+.cardpic-half {
+    width: 49%; 
+}
+
+.cardpic {
+    width: 100%;
+}
+
+.logo {
+    position: relative;
+    width: 3vw;
+}
+
+.logo_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(50,50,255, 0.3);
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.logo_container:hover {
+    background-color: rgba(80,80,255, 0.6);
+
+}
+
+.card > p {
+    text-align: left;
 }
