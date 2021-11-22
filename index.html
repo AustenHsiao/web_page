@@ -13,9 +13,11 @@
             <a class="navlink" href='#1'>About</a>
             <a class="navlink" href='#2'>Previous Work</a>
             <a class="navlink" href='#3'>Projects</a>
-            <a class="navlink" onclick=contactForm()>Contact</a>
+            <a class="navlink contactNav" onclick=contactForm()>Contact</a>
         </div>
         
+        <div class="grayArea"></div>
+
         <span class="burn"></span>
         <div class="about block">
             <h1 id="1">About</h1>
@@ -110,10 +112,11 @@
                 <img class="arrow right" src="img/right-arrow.png" onclick=cycle_right()>
                 </div>
         </div>
-
         <div class="contactForm">
             <form class="contact">
+                <img class="exitButton" src="img/quit_button.png" alt="exit button" onclick=contactForm()> 
                 <h1>Contact Austen</h3>
+                    <p>Please leave your name, email, and a message to connect with me!</p>
                 <label for="name">Name:</label><br>
                 <input class="limitedInput" type="text" id="name" name="name" required><br><br>
                 <label for="email">Email:</label><br>
