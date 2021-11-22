@@ -11,7 +11,7 @@ contactArea.setAttribute("style", "display: none;");
 overlayArea.setAttribute("style", "display: none;");
 
 // Let only one of the projects be visible
-deck[image_index].setAttribute("style", "display:inline-block; max-width: 30vw;");
+deck[image_index].style.display = "inline-block";
 
 // Cycle left of projects
 function cycle_left() {
