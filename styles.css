@@ -120,3 +120,35 @@ body {
 .card > p {
     text-align: left;
 }
+
+.contactForm {
+    margin: auto;
+    max-width: 60%;
+    border-radius: 1vh;
+}
+
+.contactForm > form {
+    background-color: rgba(250, 191, 81, 0.8);
+    border-radius: 1vh;
+    padding: 1vw;
+    width: 80%;
+    margin: auto;
+}
+
+.contact > .limitedInput {
+    min-width: 40%;
+    max-width: 40%;
+}
+
+.contact #message {
+    max-width: 80%;
+    min-width: 80%;
+    max-height: 8vh;
+    min-height: 8vh;
+    overflow-y: scroll;
+    margin-left: 8%;
+}
+
+.contact .formButton{
+    margin-left: 45%;
+}

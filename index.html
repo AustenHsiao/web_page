@@ -13,7 +13,7 @@
             <a class="navlink" href='#1'>About</a>
             <a class="navlink" href='#2'>Previous Work</a>
             <a class="navlink" href='#3'>Projects</a>
-            <a class="navlink" href=''>Contact</a>
+            <a class="navlink" onclick=contactForm()>Contact</a>
         </div>
         
         <span class="burn"></span>
@@ -109,6 +109,19 @@
                 <!-- End of cards -->
                 <img class="arrow right" src="img/right-arrow.png" onclick=cycle_right()>
                 </div>
+        </div>
+
+        <div class="contactForm">
+            <form class="contact">
+                <h1>Contact Austen</h3>
+                <label for="name">Name:</label><br>
+                <input class="limitedInput" type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input class="limitedInput" type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea type="text" id="message" name="message"></textarea><br><br>
+                <input class="formButton" type="submit" value="Contact">
+            </form>
         </div>
         
         <script src="main.js" async defer></script>
