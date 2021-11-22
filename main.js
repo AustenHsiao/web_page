@@ -1,5 +1,8 @@
 var deck = document.getElementsByClassName("card");
 var image_index = 0;
+
+// ContactArea is basically the contact form. The overlay area is between the page and the contact form 
+// and exists to block the user from clicking anything behind it.
 var contactArea = document.getElementsByClassName("contactForm")[0];
 var overlayArea = document.getElementsByClassName("grayArea")[0];
 
@@ -28,7 +31,7 @@ function cycle_right() {
     deck[image_index].style.display = "inline-block";
 }
 
-// Toggle contact form
+// Toggle contact form. The actual functionality is not implemented.
 function contactForm() {
     if (contactArea.style.display == "none") {
         contactArea.style.display = "block";
